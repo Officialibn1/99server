@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "review"
+    },
+    "new_listing": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "attribute": {
+      "type": "enumeration",
+      "enum": [
+        "trending",
+        "discounts",
+        "summer sales",
+        "best offers",
+        "flash deals"
+      ]
+    },
+    "discount_rate": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0,
+      "max": 70
+    },
+    "brand": {
+      "type": "string"
+    },
+    "stock_availabe": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "sub_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-category.sub-category",
+      "mappedBy": "products"
+    }
+  }
+}
