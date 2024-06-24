@@ -50,11 +50,11 @@ module.exports = ({ env }) => {
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'dpg-cpsh2708fa8c7396sdd0-a.oregon-postgres.render.com'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', '99server'),
-        user: env('DATABASE_USERNAME', 'postgres'),
-        password: env('DATABASE_PASSWORD', 'El-sheik@762'),
+        host: env('DATABASE_HOST'),
+        port: env.int('DATABASE_PORT'),
+        database: env('DATABASE_NAME'),
+        user: env('DATABASE_USERNAME'),
+        password: env('DATABASE_PASSWORD'),
         ssl: env.bool('DATABASE_SSL', true) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
