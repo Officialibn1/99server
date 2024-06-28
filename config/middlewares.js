@@ -23,11 +23,9 @@ module.exports = [
   },
   {
     name: 'strapi::cors',
-    settings: {
-      cors: {
-        enabled: true,
-        origin: ['http://localhost:5173', 'https://ninety9store.vercel.app'], // Add your frontend URL here
-      },
+    config: {
+      enabled: true,
+      origin: ['http://localhost:5173', 'https://ninety9store.vercel.app'],
     },
   },
   'strapi::poweredBy',
