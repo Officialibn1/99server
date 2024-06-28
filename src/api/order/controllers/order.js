@@ -51,8 +51,8 @@ module.exports = createCoreController(
             try {
                 const session = await stripe.checkout.sessions.create({
                     mode: 'payment',
-                    success_url: `${process.env.CLIENT_URL}?success=true`,
-                    cancel_url: `${process.env.CLIENT_URL}?canceled=true`,
+                    success_url: `http://localhost:5173?success=true`,
+                    cancel_url: `http://localhost:5173?canceled=true`,
                     line_items: lineItems,
                     payment_method_types: ['card']
                 });
