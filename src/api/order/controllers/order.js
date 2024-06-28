@@ -32,7 +32,7 @@ module.exports = createCoreController(
 
                     console.log(serverUrl);
 
-                    const imageUrl = product?.imageUrl ? `${serverUrl}${product?.imageUrl}` : ''
+                    const imageUrl = product?.imageUrl ? product?.imageUrl : ''
 
                     return {
                         price_data: {
